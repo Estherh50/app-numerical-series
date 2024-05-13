@@ -8,7 +8,7 @@ export default class numericalSeries {
      * @param {number} number - El número que se va a verificar
      * @returns {boolean} true si es un número primo, false si no lo es
     */
-    static isPrimo(number) {
+    isPrimo(number) {
         if (number <= 1) return false;
         if (number <= 3) return true;
 
@@ -36,7 +36,7 @@ export default class numericalSeries {
      * @param {number} number - El número a verificar si es triangular
      * @returns {boolean} - true si el número es triangular y falso de lo contrario
      */
-    static isTriangular(number) {
+    isTriangular(number) {
         const n = (-1 + Math.sqrt(1 + 8 * number)) / 2;
         return n === Math.floor(n);
     }
@@ -49,7 +49,7 @@ export default class numericalSeries {
      * @returns {boolean} - true si el valor dado es un cuadrado perfecto, falso en caso contrario
      */
 
-    static isPerfectSquare(number) {
+    isPerfectSquare(number) {
         return Math.sqrt(number) % 1 === 0;
     }
 
@@ -60,7 +60,7 @@ export default class numericalSeries {
      * @param {number} number - El número a verificar
      * @returns {boolean} - true si el número es un número fibonacci, false en caso contrario
      */
-    static isFibonacci(number) {
+    isFibonacci(number) {
         return this.isPerfectSquare(5 * number * number + 4) || this.isPerfectSquare(5 * number * number - 4);
     }
 
@@ -72,7 +72,7 @@ export default class numericalSeries {
      * @returns {number} El enésimo número primo
      */
 
-    static primo(number) {
+    primo(number) {
         const listPrimos = [];
         let nPrimo = 2;
         while (listPrimos.length < number) {
@@ -92,7 +92,7 @@ export default class numericalSeries {
      * @param {number} number - El ordinal del número triangular a calcular
      * @returns {number} - El enésimo número triangular
      */
-    static triangular(number) {
+    triangular(number) {
         return ((number * (number + 1)) / 2);
     }
 
@@ -104,7 +104,7 @@ export default class numericalSeries {
      * @param {number} number - El ordinal del número de Fibonacci a calcular
      * @returns {number} El enésimo número de la secuencia de fibonacci
      */
-    static fibonacci(number) {
+    fibonacci(number) {
         if (number <= 1) number;
 
         //recursivo
@@ -129,7 +129,7 @@ export default class numericalSeries {
      * @returns {number} - El valor del témino n de la serie dada
      */
 
-    static calculation(number) {
+    calculation(number) {
         const numberPrimo = this.primo(number + 3);
         console.log(numberPrimo);
         const numberTriangular = this.triangular(number - 1);
@@ -151,7 +151,7 @@ export default class numericalSeries {
      * @returns {number|string} El resultado de la operación o una cadena de texto indicando qué condiciones se cumplieron
      */
 
-    static calculationTwo(number) {
+    calculationTwo(number) {
         const isNPrimo = this.isPrimo(number + 3);
         console.log(isNPrimo);
         const isNTriangular = this.isTriangular(number - 1);
@@ -159,9 +159,9 @@ export default class numericalSeries {
         const isNFibonacci = this.isFibonacci(number - 2);
         console.log(isNFibonacci);
 
-        const nPrimo = isNPrimo ? number + 3 : false;
-        const nTriangular = isNTriangular ? number - 1 : false;
-        const nFibonacci = isNFibonacci ? number - 2 : false;
+        const nPrimo = isNPrimo ? (number + 3) : false;
+        const nTriangular = isNTriangular ? (number - 1) : false;
+        const nFibonacci = isNFibonacci ? (number - 2) : false;
 
 
         let result = 0;
