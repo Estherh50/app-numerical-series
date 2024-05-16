@@ -107,8 +107,6 @@ export default class numericalSeries {
     fibonacci(number) {
         if (number <= 1) number;
 
-        //recursivo
-        // return this.fibonacci(number-2) + this.fibonacci(number-2);
 
         let prevPrev = 0;
         let prev = 1;
